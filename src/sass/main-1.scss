@@ -104,8 +104,8 @@ body > div {
 }
 
 #submenu {
-
 }
+
 
 #images {
     background-color: $lightGray-2;
@@ -120,6 +120,13 @@ body > div {
 }
 
 #footer {
+    text-align: center;
     background-color: $tamnoPlava;
+    padding: 1rem 1.5rem;
+
+    a {
+        color: $red;
+        margin-left: 0.5rem;
+    }
 }
 
