@@ -131,7 +131,6 @@ body > div {
     }
 }
 
-
 #images {
     background-color: $lightGray-2;
     padding: 4rem 0;
@@ -142,6 +141,19 @@ body > div {
         opacity: 0.7;
         transition: opacity .4s ease;
         align-items: center;
+
+        @media screen and (max-width: $break-small) {
+            display: block !important;
+            opacity: 1 !important;
+            img {
+                margin: 0 auto !important;
+                display: block !important;
+            }
+            .caption {
+                display: block !important;
+                text-align: center !important;
+            }
+        }
 
         &:hover {
             opacity: 1;
@@ -186,9 +198,26 @@ body > div {
         text-align: center;
     }
 
+    .btn {
+        display: none;
+        width: 100px;
+        border: 1px solid;
+        padding: 1rem;
+        border-radius: 2rem;
+        margin: 1rem auto;
+        cursor: pointer;
+
+        @media screen and (max-width: $break-small) {
+            display: block;
+        }
+    }
+
     .tableContainer {
         width: $colWidth;
         margin: 0 auto;
+        @media screen and (max-width: $break-small) {
+            display: none;
+        }
 
         table {
             width: 100%;
@@ -233,8 +262,66 @@ body > div {
     background-color: $lightGray-2;
     padding: 4rem 0;
 
-    div {
+    > div {
+        width: $colWidth;
         display: flex;
+        margin: 0 auto;
+        @media screen and (max-width: $break-medium) {
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            > div {
+                width: auto !important;
+                display: flex;
+                justify-content: center;
+
+                &.map {
+                    margin-bottom: 4rem;
+                }
+            }
+        }
+
+        .map {
+            margin: 0 4rem;
+            width: 40%;
+        }
+
+        .address {
+            width: 60%;
+        }
+
+        form {
+            background-color: $red;
+            padding: 0.5rem;
+
+            .field {
+                padding: 0.5rem;
+                display: inline-block;
+                box-sizing: border-box;
+
+                select, textarea, input {
+                    margin: 0;
+                    width: 100%;
+                    padding: 0.4rem;
+                    box-sizing: border-box;
+                    display: block;
+                    border: 0;
+                }
+
+                &.greet {
+                    width: 39%;
+                }
+                &.name {
+                    width: 60%;
+                }
+                &.email {
+                    width: 99%;
+                }
+                &.text {
+                    width: 99%;
+                }
+            }
+        }
     }
 }
 
