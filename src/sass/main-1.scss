@@ -110,6 +110,25 @@ body > div {
 }
 
 #submenu {
+    display: flex;
+    justify-content: flex-end;
+
+    menu {
+        list-style-type: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+
+        a {
+            color: $textColor;
+            margin: 1rem;
+            padding: 1rem;
+            border: 1px solid;
+            display: block;
+            border-radius: 2rem;
+            text-decoration: none;
+        }
+    }
 
 }
 
@@ -213,6 +232,10 @@ body > div {
 #contact {
     background-color: $lightGray-2;
     padding: 4rem 0;
+
+    div {
+        display: flex;
+    }
 }
 
 #footer {
