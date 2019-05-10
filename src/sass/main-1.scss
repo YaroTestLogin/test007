@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import './main-1/variables.scss';
+@import './main-1/map.scss';
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Roboto', 'Arial Narrow', Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    color: $textColor;
+    font-size: 12px;
+}
+
+h2 {
+    color: $headerColor;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+body > div {
+    // padding: 2em;
+    // outline: 1px solid red;
+}
+
+#topmenu {
+    background-color: $tamnoPlava;
+    display: flex;
+    flex-direction: row;
+    @media screen and (max-width: $break-small) {
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    menu {
+        list-style-type: none;
+        color: white;
+        display: flex;
+        padding: 0;
+        margin: 0;
+        margin-left: auto;
+
+        @media screen and (max-width: $break-small) {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        li {
+            display: block;
+
+            a {
+                font-size: 0.8rem;
+                text-decoration: none;
+                display: block;
+                padding: 1rem 1.5rem;
+                color: white;
+                text-align: center;
+
+
+            }
+        }
+    }
+    .toggleContainer {
+        a.toogleMenu {
+            background: $red;
+            padding: 1rem;
+            text-align: left;
+            display: block;
+            img {
+                width: 0.8rem;
+                height: 0.8rem;
+            }
+        }
+    }
+
+}
+
+#cover {
+    background: url('/public/images/task1/intro.jpg') no-repeat center center;
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    flex-direction: column-reverse;
+
+    .title {
+        color: white;
+        text-align: center;
+        background: rgba(0,0,0,0.3);
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        h5 {
+            margin-top: 0;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+    }
+}
+
+#submenu {
+
+}
+
+#images {
+    background-color: $lightGray-2;
+}
+
+#pricing {
+
+}
+
+#contact {
+    background-color: $lightGray-2;
+}
+
+#footer {
+    background-color: $tamnoPlava;
+}
+

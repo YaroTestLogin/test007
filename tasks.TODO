@@ -1,0 +1,35 @@
+
+
+☐ сделать меню
+	☐ меню само
+	☐ переключака
+☐ intro
+☐
+
+FED 4 Kurs: Parcijalni test
+----------------------------------------------------------------------------
+
+ZADATAK:
+	☐ Korišćenjem HTML i Sass tehnologija realizovati HTML stranicu prikazanu na slikama.
+	Implementirati sledeće zahteve:
+
+	☐ 1.	Sass kod modularizovati minimalno tako da se korišćene promenljive i mixini pišu u posebnim
+      ☐ sass datotekama koje se uključuju u glavni fajl.
+	☐ 2.	Boje, fontove kao i ostale korisne vrednosti 	izdvojiti u sass promenljive.
+	3.	Realizovati sledeće efekte:
+        ☐ a.	Kada se mišem pređe preko likova u glavnoj navigaciji, tekst linka treba da bude podvučen (underline).
+        ☐ b.	Kada se mišem pređe preko dugmića u drugoj sekciji, postaviti pozadinu na sivu a boju teksta na belu.
+        ☐ c.	Kada se mišem pređe preko elemenata u trećoj sekciji, prikazati dodatni sadržaj sa tekstom i providnost slike isključiti.
+			☐ Primer je dat na slikama "4_hover_1.png", "4_hover_2.png", "4_hover_3.png".
+	☐ 4.	Realizovati responsive verzije stranice kao na priloženim slikama.
+
+BOJE:
+	☐ Crvena: #f38181
+	☐ Tamno plava (header i footer): #374249
+	☐ Boja fonta: #797979
+	☐ Naslovi: #374249
+	☐ Svetlo siva 1 (hover na dugmice): #cfd1d3
+	☐ Svetlo siva 2 (pozadina sekcija): #f3f7f9
+
+WEB FONTOVI:
+	☐ Roboto
