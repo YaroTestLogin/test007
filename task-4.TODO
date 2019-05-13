@@ -1,0 +1,26 @@
+ZADATAK:
+	Korišćenjem HTML i Sass tehnologija realizovati HTML stranicu prikazanu na slikama.
+	Implementirati sledeće zahteve:
+	1.	Sass kod modularizovati minimalno tako da se korišćene promenljive i mixini pišu u posebnim
+		  sass datotekama koje se uključuju u glavni fajl.
+	2.	Boje, fontove kao i ostale korisne vrednosti (po sopstvenoj proceni) izdvojiti u sass promenljive.
+	3.	Realizovati responsive verzije stranice za veliki i mali ekran kako je prikazano na slikama.
+  4.  Koristiti git za verzionisanje tokom izrade zadatka. u lokalnom git repozitorijumu kreirati
+      .gitignore datoteku koja odgovara ovom tipu projekta.
+  5.  Realizovati sledeće efekte:
+        a)  Kada se pređe mišem preko linkova u glavnoj navigaciji, postaviti im crnu pozadinu sa svetlo sivom bojom teksta
+        b)  Kada se pređe mišem preko glavnog dugmeta ("Check it out") postaviti mu crnu pozadinu
+        c)  Kada se pređe mišem preko elemenata u drugoj sekciji ("What do you get?") postaviti izgled kao na
+            slici "2_hover_primer.png"
+        d)  Kada se pređe mišem preko dugmeta "Send" postaviti mu boju pozadine na crnu
+  6. Sliku "favicon.png" postaviti kao ikonicu za sajt.
+  7. Prva sekcija treba da bude prikazana preko celog browser prozora
+
+BOJE:
+	Crna:         #222831
+  Crvena:       #d65a31
+  Svetlo siva:  #eeeeee
+
+WEB FONTOVI:
+	Roboto (normal) - Tekst
+	Baloo Bhai (normal) - Naslovi

@@ -9,8 +9,7 @@ gulp.task('clean', function() {
 
 gulp.task('css', function() {
     return gulp.src([
-        './src/sass/main.scss',
-        './src/sass/main-1.scss'
+        './src/sass/*.scss',
     ])
         // .pipe(plugins.sourcemaps.init())
         .pipe(plugins.sass().on('error', plugins.sass.logError))
@@ -43,7 +42,7 @@ gulp.task('css', function() {
 // });
 
 gulp.task('watch', function(){
-    gulp.watch('./src/sass/*.scss', ['css']);
+    gulp.watch('./src/sass/**/*.scss', ['css']);
     // gulp.watch('./src/js/*.js', ['js']);
 });
 

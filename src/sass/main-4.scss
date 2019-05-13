@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai');
+@import './main-4/variables.scss';
+
+body {
+    font-family: 'Roboto', 'Arial Narrow', Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    color: $crna;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Baloo Bhai', 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+#start {
+    height: 2rem;
+    background: yellow;
+}
+
+.container {
+    margin: 0 auto;
+    width: $largeScreen;
+}
+
+section {
+    padding: 3rem 0;
+}
+
+#what {
+    background: $svetloSiva;
+
+    .items {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .item {
+            text-align: center;
+            width: 28.33%;
+            margin: 1rem 2% 0;
+            padding: 1.5rem;
+            box-sizing: border-box;
+            border-radius: 1rem;
+            background: $svetloSiva;
+            color: $crna;
+            transition: all .4s ease;
+
+            &:hover {
+                background: $crna;
+                color: $svetloSiva;
+                .img-cont {
+                    background: $crvena;
+                }
+
+            }
+
+            .img-cont {
+                width: 6rem;
+                height: 6rem;
+                border-radius: 6rem;
+                background: $svetloSiva;
+                padding: 1.2rem;
+                margin: 1rem auto;
+                box-sizing: border-box;
+                transition: background .4s ease;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            p {
+                text-align: left;
+                margin-top: 0;
+                margin-bottom: 0.2rem;
+                &.intro {
+                    text-align: center;
+                    font-weight: 700;
+                    color: $crvena;
+                }
+            }
+        }
+    }
+}
