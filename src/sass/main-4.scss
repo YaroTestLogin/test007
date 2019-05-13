@@ -158,3 +158,16 @@ section {
         }
     }
 }
+
+#footer {
+    text-align: center;
+    background-color: $crvena;
+    padding: 0.6rem 0;
+    color: $svetloSiva;
+
+    a {
+        font-weight: bold;
+        color: inherit;
+        margin-left: 0.24rem;
+    }
+}
