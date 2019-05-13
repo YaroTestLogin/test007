@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 @import url('https://fonts.googleapis.com/css?family=Baloo+Bhai');
 @import './main-4/variables.scss';
+@import './main-4/map.scss';
 
 body {
     font-family: 'Roboto', 'Arial Narrow', Arial, sans-serif;
@@ -36,12 +37,14 @@ h3 {
 
 .container {
     margin: 0 auto;
-    width: $largeScreen;
+    max-width: $largeScreen;
+    box-sizing: border-box;
+
     @media screen and (max-width: $middleScreen) {
-        width: $middleScreen;
+        max-width: $middleScreen;
     }
     @media screen and (max-width: $smallScreen) {
-        width: 100%;
+        max-width: 100%;
     }
 }
 
@@ -226,6 +229,51 @@ section {
             border-radius: 0 0 1rem 1rem;
             border: 1px solid rgba($crna, 0.5);
         }
+    }
+}
+
+#links {
+    background: $crna;
+    color: $svetloSiva;
+    .grid {
+        display: flex;
+        padding: 0 2rem;
+        @media screen and (max-width: $smallScreen) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .links-list {
+        flex-grow: 1;
+        flex-direction: row;
+        flex-wrap: wrap;
+        @media screen and (max-width: $smallScreen) {
+            margin-top: 2rem;
+        }
+
+        .header {
+            display: block;
+            width: 100%;
+            font-weight: bold;
+            @media screen and (max-width: $smallScreen) {
+                text-align: center;
+            }
+        }
+        .item {
+            display: inline-block;
+            margin-right: 1rem;
+            @media screen and (max-width: $smallScreen) {
+                display: block;
+                text-align: center;
+            }
+            &::before {
+                content: "> ";
+                color: $crvena;
+            }
+        }
+    }
+    .mapouter {
+
     }
 }
 #footer {
