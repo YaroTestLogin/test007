@@ -20,21 +20,36 @@ gulp.task('css', function() {
         .pipe(browserSync.stream());
 });
 
-gulp.task('scripts' , function(){
-    return gulp.src('src/**/*.ts')
-    .pipe(
-        ts({
-             "compilerOptions": {
-                 "target": "es5",
-                 "module": "commonjs",
-                 "sourceMap": true
-             }
-        })
-    )
-    .pipe(gulp.dest(function(file) {
-    return file.base;
-  }));
+var gulps = require('gulp')
+    , typescript = require('gulp-typescript')
+    , typescriptLint = require('gulp-tslint');
+   
+// Lint all typescript files
+gulp.task('typescript-lint', function () {
+    return gulp.src(['src/**/*.ts']).pipe(typescriptLint({configuration: 'tslint.json'}))
+                                                .pipe(typescriptLint.report('prose'));
 });
+   
+// Build all typescript files
+gulp.task('typescript-build', function () {
+    var typescriptResult = gulp.src(['src/**/*.ts']).pipe(typescript(typescript.createProject('tsconfig.json')));
+    return typescriptResult.js.pipe(gulp.dest('build'));
+});
+
+// Watch all typescript files for changes and rebuild everything
+gulp.task('typescript-watch', function () {
+    gulp.watch(['src/**/*.ts'], [
+          'typescript-lint'
+        , 'typescript-build'
+    ]); 
+});
+
+// Default gulp task
+gulp.task('default', [
+      'typescript-lint'
+    , 'typescript-build'
+    , 'typescript-watch'
+]);
 
 // gulp.task('js', function(){
 //     return gulp.src([
@@ -61,6 +76,8 @@ gulp.task('watch', function(){
     gulp.watch('./src/sass/**/*.scss', ['css']);
     // gulp.watch('./src/js/*.js', ['js']);
 });
+
+
 
 gulp.task('serve', function() {
     browserSync.init({
