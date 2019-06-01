@@ -1,0 +1,51 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+
+.header {
+    height: 80px;
+    background-color: $clr-header;
+
+    @include clearfix;
+
+    &__logo {
+        background-color: $clr-orange;
+        width: 20%;
+        height: 100%;
+        float: left;
+
+        @include clearfix;
+
+        &__image {
+            height: 60px;
+            margin: auto;
+            float: left;
+            padding: 20px 0 0 30px;
+        }
+
+        &__text {
+            font-family: $font;
+            color: white;
+            padding-top: 30px;
+            text-decoration: underline;
+        }
+    }
+
+    &__nav {
+        float: left;
+
+        &__list_item {
+            display: inline-block;
+            padding: 30px;
+            font-family: $font;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            a {
+                color: white;
+            }
+        }
+    }
+}
