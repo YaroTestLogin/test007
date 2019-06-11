@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const plugins = require('gulp-load-plugins')();
+const ts = require('gulp-typescript');
 const browserSync = require('browser-sync').create();
 
 gulp.task('clean', function() {
@@ -20,36 +21,14 @@ gulp.task('css', function() {
         .pipe(browserSync.stream());
 });
 
-var gulps = require('gulp')
-    , typescript = require('gulp-typescript')
-    , typescriptLint = require('gulp-tslint');
-   
-// Lint all typescript files
-gulp.task('typescript-lint', function () {
-    return gulp.src(['src/**/*.ts']).pipe(typescriptLint({configuration: 'tslint.json'}))
-                                                .pipe(typescriptLint.report('prose'));
+gulp.task('tss', function () {
+    return gulp.src('src/js/**/*.ts')
+        .pipe(ts({
+            noImplicitAny: true,
+            outFile: 'scripts.js'
+        }))
+        .pipe(gulp.dest('dist/js'));
 });
-   
-// Build all typescript files
-gulp.task('typescript-build', function () {
-    var typescriptResult = gulp.src(['src/**/*.ts']).pipe(typescript(typescript.createProject('tsconfig.json')));
-    return typescriptResult.js.pipe(gulp.dest('build'));
-});
-
-// Watch all typescript files for changes and rebuild everything
-gulp.task('typescript-watch', function () {
-    gulp.watch(['src/**/*.ts'], [
-          'typescript-lint'
-        , 'typescript-build'
-    ]); 
-});
-
-// Default gulp task
-gulp.task('default', [
-      'typescript-lint'
-    , 'typescript-build'
-    , 'typescript-watch'
-]);
 
 // gulp.task('js', function(){
 //     return gulp.src([
@@ -74,10 +53,8 @@ gulp.task('default', [
 
 gulp.task('watch', function(){
     gulp.watch('./src/sass/**/*.scss', ['css']);
-    // gulp.watch('./src/js/*.js', ['js']);
+    gulp.watch('./src/js/**/*.ts', ['tss']);
 });
-
-
 
 gulp.task('serve', function() {
     browserSync.init({
@@ -90,5 +67,4 @@ gulp.task('serve', function() {
 });
 
 
-
-gulp.task('default', ['css', 'watch', 'serve']);
+gulp.task('default', ['css', 'tss', 'watch', 'serve']);
