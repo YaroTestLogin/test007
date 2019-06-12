@@ -130,6 +130,11 @@ function initForm() {
 	status.addEventListener("change", function (evt) {
 		sel1.disabled = !status.checked;
 		sel2.disabled = !status.checked;
+		if (!status.checked) {
+			sel2.style.visibility = 'hidden'
+			select_paragraf.parentElement.style.backgroundColor = `#337ab7`
+			poruka.innerHTML = ''
+		}
 	});
 
 	sel1.addEventListener("change", function (evt) {
